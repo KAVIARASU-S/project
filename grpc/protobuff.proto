@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package project;
+option go_package = "https://github.com/KAVIARASU-S/project.git";
+service CustomerService {
+    rpc CreateCustomer (Customer) returns (CustomerResponse);
+}
+
+message Customer {
+    string FirstName=1;
+    string LastName=2;
+    
+    int32 CustomerId=3;
+    int32 BankId=4;
+    float Balance=5;
+}
+
+message CustomerResponse {
+    int64 Withdraw=1;
+    int64 Deposit=2;
+    int64 Transfer=3;
+}
+
+message CustomerRequest {
+    string id =1;
+}
+
+message TaskResponse {
+    string id=1;
+}
+
+message Empty{}
